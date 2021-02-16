@@ -15,6 +15,7 @@ It is an application that aims to create an online library. To add a copy, provi
 * express: 4.17.1<br>
 * express-ejs-layouts: 2.5.0<br>
 * fs: 0.0.1-security<br>
+* dotenv: 8.2.0<br>
 * gridfs-bucket: 0.7.4<br>
 * https: 1.0.0<br>
 * method-override: 3.0.0<br>
