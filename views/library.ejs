@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Esteban&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png">
+    <link href= "library.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+    <noscript>JavaScript is not supported in your web browser or has been disabled</noscript>
+    <title>Book's Storage</title>
+</head>
+<body>
+  <div class="container">
+    <h3>My Library</h3>
+    <% if (conf != '') { %>
+      <div class="successMsg">
+          <%= conf %>
+      </div>
+  <% } %>
+    <div class="msg-banner"></div>
+    <div class="examples-viewer">
+      <% if (books) { %>
+        <% books.forEach(book => { %>
+          <div class="example">
+            <div class="thumb-space">
+              <div class="thumb-cover">
+                <% if (book.coverImageName.includes('myCover')) {%>
+                  <img src="./uploads/bookCovers/<%= book.coverImageName %>" alt="Unloaded cover">
+                <% } else { %>
+                  <img src="<%= book.coverImageName %>" alt="Unloaded cover">
+                <% } %>
+              </div>
+            </div>
+            <div class="description">
+              <div class="title-ex"><%= book.title %>  <%= book.subtitle ? book.subtitle : '' %></div>
+              <div class="author-ex"><%= book.authorDetails %></div>
+              <div class="genre-ex"><%= book.genreOfBook ? book.genreOfBook : '' %></div>
+              <div class="rate-ex"><%= book.rate %> / 5</div>
+              <div class="pages-ex"><%= book.numberOfPages %></div>
+            </div>
+            <div class="btns">
+              <form action="/delete/<%= book._id %>?_method=DELETE" method="POST" class="delete-btn-form">
+                <div class="delete-btn"></div>
+              </form>
+              <div class="read-btn"></div>
+            </div>
+          </div>
+          <% })} %>
+    </div>
+      <div class="functionality-btns">
+        <div class="sorting-space">
+          <form action="/sort" method="POST" class="sort-btn-form">
+            <label for="search-sort-select" class="label-sort">Sort by:</label>
+            <select name="sort" class="search-sort-select">
+              <option value="rate-up" selected="selected">Rating: ascending</option>
+              <option value="rate-down">Rating: descending</option>
+              <option value="page-up">Pages: ascending</option>
+              <option value="page-down">Pages: descending</option>
+            </select>
+        </form>
+      </div>
+      <form action="/add" method="POST" class="back-to-add-btn">
+        <input type="button" class="go-to-add" value="Add new book">
+      </form>
+    </div>
+  </div>
+  <div id="overlay"></div>
+  <script type="text/javascript" src="/libraryPage.js"></script>
+</body>
+</html>

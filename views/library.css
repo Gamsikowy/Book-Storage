@@ -1,0 +1,244 @@
+*{
+    overflow: unset;
+    box-sizing: border-box;
+    font-family: 'Esteban', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #3c4359;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: darkseagreen;
+}
+
+.container{
+    position: relative;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 100%;
+}
+
+.container h3{
+    font-size: 36px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+.example{
+    border-bottom: 1px solid #3c4359;
+    display: flex;
+    justify-content: space-between;
+    height: 180px;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.example:first-child{
+    border-top: 1px solid #3c4359;
+}
+
+.thumb-space{
+    width: 200px;
+    height: 180x;
+}
+
+.thumb-cover img{
+    width: 120px;
+    height: 140px;
+    align-self: center;
+}
+
+.thumb-cover img[alt]{
+    text-align: center;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 150px;
+    width: 100%;
+    margin-left: 15px;
+}
+
+.title-ex, .author-ex, .genre-ex, .rate-ex, .pages-ex{
+    height: 25px;
+}
+
+.title-ex{
+    font-weight: 800; 
+}
+
+.btns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 120px;
+    height: 140px;
+}
+
+.delete-btn, .read-btn{
+    font-size: 48px;
+    width: 120px;
+    height: 60px;
+    border: 1px solid #3c4359;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.read-btn::after{
+    content: '\f5da';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+}
+
+.delete-btn::after{
+    content: '\f00d';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+}
+
+.warningMsg {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 15px;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.warningMsg::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    width: 30px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.warningMsg::before {
+    content: '\f071';
+}
+
+.successMsg {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 15px;
+    font-size: 18px;
+    color: #5F9B21;
+    background-color: #DFF2BF;
+}
+
+.successMsg::before {
+    content: '\f14a';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    width: 30px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+#viewerCanvas{
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    left: 50%; 
+    top: 10%;
+    transform: translateX(-50%);
+    background-color: darkslategrey;
+    display: none;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 150ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+  }
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+   
+body::-webkit-scrollbar-thumb {
+    background-color: #3c4359;
+    border-radius: 40px;
+  }
+
+body::-webkit-scrollbar {
+    width: 10px;
+  }
+   
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px darkseagreen;
+  }
+
+.functionality-btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 170px;
+    width: 200px;
+    position: absolute;
+    right: 0;
+}
+
+.sorting-space{
+    display: flex;
+    height: 70px;
+    width: 250px;
+    align-items: flex-start;
+    position: absolute;
+    right: 0;
+}
+
+.sort-btn-form{
+    display: flex;
+    justify-content: space-between;
+    width: 280px;
+}
+
+.label-sort{
+    font-weight: 700;
+    width: 65px;
+    height: 30px;
+}
+
+.search-sort-select{
+    width: 180px;
+    height: 30px;
+    cursor: pointer;
+    top: 20px;
+}
+
+option{
+    cursor: pointer;
+}
+
+.go-to-add{
+    border-radius: 10px;
+    background-color: #3c4359;
+    color: #fff;
+    margin-top: 20px;
+    border: none;
+    padding: 5px;
+    width: 145px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 70px;
+}

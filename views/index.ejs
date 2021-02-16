@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Esteban&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png">
+    <link href= "index.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+    <title>Book's Storage</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="./img/logo.png">
+        </div>
+        <div class="choice">
+            What do you wanna do?
+        </div>
+        <div class="options">
+            <form action="/add" method="POST" class="left-side">
+                <div class="add-new" data-name="left-side-data">
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+                <div class="first-wait">Add a new book</div>
+            </form>
+            <form action="/library" method="GET" class="right-side">
+                <div class="show-all" data-name="right-side-data">
+                    <i class="far fa-eye"></i>
+                </div>
+                <input type="hidden" class="hiddenInput" name="post-from-index" value="post-from-index">
+                <div class="second-wait">Show the entire library</div>
+            </form>
+        </div>
+    </div>
+    <script src="/mainPage.js"></script>
+</body>
+</html>

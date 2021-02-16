@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Esteban&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png">
+    <link href= "add.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+    <title>Book's Storage</title>
+</head>
+<body>
+    <form action="/library" method="POST" class="form-submit-btn" enctype="multipart/form-data">
+    <div class="container">
+        <% if (typeof conf != 'undefined'){ %>
+            <div class="successMsg">
+                <%= conf %>
+            </div>
+        <% } %>
+        <% if (typeof msg != 'undefined'){ %>
+            <div class="errorMsg">
+                <%= msg %>
+            </div>
+        <% } %>
+        <h3>Add a new book</h3>
+            <div class="adding-panel">
+                <div class="formula title">
+                    <label for="title" class="describe">Title:</label>
+                    <input type="text" id="title" name="title" class="form-control" placeholder="Lord of the Rings"/>
+                </div>
+                <div class="formula subtitle">
+                    <label for="subtitle" class="describe">Subtitle:</label>
+                    <input type="text" id="subtitle" name="subtitle" class="form-control" placeholder="The Fellowship of the Ring"/>
+                </div>
+                <div class="formula author">
+                    <label for="author" class="describe">Author details:</label>
+                    <input type="text" id="author" name="author" class="form-control" placeholder="J.R.R. Tolkien"/>
+                </div>
+                <div class="formula genre">
+                    <label for="genre" class="describe">Genre of book:</label>
+                    <input type="text" id="genre" name="genre" class="form-control" placeholder="Fantasy"/>
+                </div>
+                <div class="formula pages-counter">
+                    <label for="pages-counter" class="describe">Number of pages:</label>
+                    <input type="number" id="pages-counter" min="1" name="numberOfPages" class="form-control" placeholder="586"/>
+                </div>
+                <div class="formula rate">
+                    <label for="rate" class="describe">Rate:</label>
+                    <div class="rate-bg">
+                        <input id="star5" class="rate-star" name="rate" type="radio" value="5">
+                        <label for="star5">Five star</label>
+                        <input id="star4" class="rate-star" name="rate" type="radio" value="4">
+                        <label for="star4">Four star</label>
+                        <input id="star3" class="rate-star" name="rate" type="radio" value="3">
+                        <label for="star3">Three star</label>
+                        <input id="star2" class="rate-star" name="rate" type="radio" value="2">
+                        <label for="star2">Two star</label>
+                        <input id="star1" class="rate-star" name="rate" type="radio" value="1">
+                        <label for="star1">One star</label>
+                    </div>
+                </div>
+                <div class="formula cover">
+                    <label for="cover" class="describe">Find cover on the Internet </br> or load your own:</label>
+                    <div class="btns-container">
+                        <input type="button" data-modal-target="#modal" id="find-btn" class="cover-btns" value="Find it">
+                        <input type="button" data-modal-target="#modal2" id="load-btn" class="cover-btns" value="Load it">
+                    </div>
+                </div>
+            </div>
+            <div class="submit-form">
+                <input type="button" value="Submit the form" class="submit-btn"></input>
+            </div>
+    </div>
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="in-header-title">
+                    Does any of these covers match?
+                </div>
+                <input type="button" id="file" data-close-button class="close-btn" value="&times;"></input>
+            </div>
+            <div class="msg-banner"></div>
+            <div class="content-modal">
+                <div class="cover-example" id="one">
+                    <img src="" class="cover-example-img" alt="Cover Example">
+                </div>
+                <div class="cover-example" id="two">
+                    <img src="" class="cover-example-img" alt="Cover Example">
+                </div>
+                <div class="cover-example" id="three">
+                    <img src="" class="cover-example-img" alt="Cover Example">
+                </div>
+            </div>
+            <input type="button" data-close-button class="submit-cover-btn" value="Select">
+        </div>
+        <div class="modal" id="modal2">
+                <div class="modal-header">
+                    <label for="file" class="in-header-title">
+                        Load your own cover
+                    </label>
+                    <input type="button" id="file" data-close-button class="close-btn" value="&times;"></input>
+                </div>
+                <div class="content-modal">
+                    <div class="loading-space">
+                        <input class="custom-file-input" id="file" name="myCover" type="file">
+                    </div>
+                    <div class="cover-avatar">
+                        <img src="" alt="Image Preview" id="img-id=preview">
+                        <input type="hidden" class="hiddenImgInput" name="hiddenImgInput" value="">
+                    </div>
+                </div>
+                <input type="button" data-close-button class="submit-cover-btn" value="Select">
+        </div>
+    </form>
+    <div id="overlay"></div>
+    <script src="/addPage.js"></script>
+</body>
+</html>
