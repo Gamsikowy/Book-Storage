@@ -4,7 +4,8 @@
 * [Technologies](#technologies)
 * [Launching the application](#launching-the-application)
 ## Goal of the project:
-It is an application that aims to create an online library. To add a copy, provide the relevant information describing the book, rate it and add a photo of its cover. An additional variety is the automatic search for the cover using the puppeteer.js library.<br>When displaying a set of books, you can sort the items and, thanks to the viewer from the Googe Books API, read the book.
+It is an application that aims to create an online library. To add a copy, provide the relevant information describing the book, rate it and add a photo of its cover. An additional variety is the automatic search for the cover using the puppeteer.js library.<br>When displaying a set of books, you can sort the items and, thanks to the viewer from the Googe Books API, read the book.<br>
+[Click to watch a video showing how to use the application.](https://www.youtube.com/watch?v=I8c6lBD2uXc)<br>
 ## Technologies:
 * body-parser: 1.19.0<br>
 * body-parser: 1.19.0<br>
