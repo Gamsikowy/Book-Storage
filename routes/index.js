@@ -34,20 +34,16 @@ const upload = multer({
   }
 });
 
-// @route GET /
-// @desc Loads index
+// Loads index
 router.get('/', (req, res) => res.render('index'));
 
-// @route GET /add
-// @desc Loads add
+// Loads add
 router.get('/add', (req, res) => res.render('add'));
 
-// @route GET /add
-// @desc Redirect add
+// Redirect add
 router.post('/add', (req, res) => res.redirect('add'));
 
-// @route GET /library
-// @desc Loads imgs with desc
+// Loads imgs with desc
 router.get('/library', (req, res) => {
   let cursor = db.collection('covers').find({});
 
@@ -64,8 +60,7 @@ router.get('/library', (req, res) => {
   });
 });
 
-// @route POST /library
-// @desc Uploads img
+// Uploads img
 router.post('/library', upload.single('myCover'), async (req, res) => {
   let coverName;
 
@@ -118,8 +113,7 @@ router.post('/library', upload.single('myCover'), async (req, res) => {
       });
 });
 
-// @route POST /sort
-// @desc Sorting management
+// Sorting management
 router.post('/sort', (req, res) => {
   let cursor = db.collection('covers').find({});
 
@@ -158,8 +152,7 @@ router.post('/sort', (req, res) => {
   }
 });
 
-// @route DELETE /delete:id
-// @desc Delete doc
+// Delete doc
 router.delete('/delete/:id', async (req, res) => {
   const bookToRemoveId = mongoose.Types.ObjectId(req.params.id);
 
